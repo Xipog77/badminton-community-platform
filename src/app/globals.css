@@ -4,8 +4,59 @@
 
 :root {
   color-scheme: light;
+  --paper: #fdfbf7;
+  --ink: #2d2d2d;
+  --muted-paper: #e5e0d8;
+  --marker-red: #ff4d4d;
+  --pen-blue: #2d5da1;
+  --wobbly: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  --wobbly-md: 225px 18px 210px 22px / 18px 210px 22px 225px;
 }
 
 body {
-  @apply bg-slate-50 text-slate-900 antialiased;
+  @apply antialiased;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image: radial-gradient(var(--muted-paper) 1px, transparent 1px);
+  background-size: 24px 24px;
+  font-family: var(--font-body), "Patrick Hand", "Comic Sans MS", cursive;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), "Kalam", "Comic Sans MS", cursive;
+}
+
+@layer components {
+  .sketch-card {
+    @apply border-[3px] border-[var(--ink)] bg-white p-6;
+    border-radius: var(--wobbly-md);
+    box-shadow: 4px 4px 0 0 var(--ink);
+  }
+
+  .sketch-input {
+    @apply w-full border-2 border-[var(--ink)] bg-white px-3 py-2 text-lg text-[var(--ink)] outline-none transition;
+    border-radius: var(--wobbly-md);
+  }
+
+  .sketch-input::placeholder {
+    color: rgb(45 45 45 / 45%);
+  }
+
+  .sketch-input:focus {
+    border-color: var(--pen-blue);
+    box-shadow: 0 0 0 2px rgb(45 93 161 / 20%);
+  }
+
+  .sketch-section-title {
+    @apply text-4xl font-bold md:text-5xl;
+  }
+
+  .sketch-subtext {
+    @apply text-lg;
+  }
 }
