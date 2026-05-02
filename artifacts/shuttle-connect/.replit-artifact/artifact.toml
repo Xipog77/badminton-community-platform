@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Shuttle Connect"
+version = "1.0.0"
+id = "artifacts/shuttle-connect"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23350
+
+[services.development]
+run = "pnpm --filter @workspace/shuttle-connect run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/shuttle-connect", "run", "build" ]
+publicDir = "artifacts/shuttle-connect/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23350"
+BASE_PATH = "/"

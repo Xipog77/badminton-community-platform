@@ -1,0 +1,158 @@
+[
+  {
+    "id": "m1",
+    "title": "Friday Morning Smash - Singles",
+    "hostName": "Marcus Chen",
+    "hostAvatar": "/avatar1.png",
+    "date": "2024-10-12",
+    "time": "09:00 AM",
+    "location": "Active Arena",
+    "court": "Court 4",
+    "skillLevel": "Advanced",
+    "playersJoined": 2,
+    "playersNeeded": 2,
+    "fee": 12,
+    "status": "Completed",
+    "description": "High intensity singles practice.",
+    "players": [
+      {
+        "name": "Marcus Chen",
+        "avatar": "/avatar1.png",
+        "level": "Advanced",
+        "confirmed": true
+      },
+      {
+        "name": "David Tan",
+        "avatar": "/avatar1.png",
+        "level": "Advanced",
+        "confirmed": true
+      }
+    ]
+  },
+  {
+    "id": "m2",
+    "title": "Corporate Cup Finals - Doubles",
+    "hostName": "Sarah Jenkins",
+    "hostAvatar": "/avatar2.png",
+    "date": "2024-10-08",
+    "time": "07:30 PM",
+    "location": "Grand Hall Sports Complex",
+    "court": "Court 1",
+    "skillLevel": "Advanced",
+    "playersJoined": 4,
+    "playersNeeded": 4,
+    "fee": 15,
+    "status": "Completed",
+    "description": "Competitive doubles match.",
+    "players": [
+      {
+        "name": "Sarah Jenkins",
+        "avatar": "/avatar2.png",
+        "level": "Advanced",
+        "confirmed": true
+      }
+    ]
+  },
+  {
+    "id": "m3",
+    "title": "Advanced Singles Practice",
+    "hostName": "Marcus T.",
+    "hostAvatar": "/avatar1.png",
+    "date": "2024-10-24",
+    "time": "18:00",
+    "location": "Elite Sports Arena",
+    "court": "Court 4",
+    "skillLevel": "Intermediate",
+    "playersJoined": 4,
+    "playersNeeded": 4,
+    "fee": 12,
+    "status": "Full",
+    "description": "Looking for 2 competitive players to join a high-intensity singles practice session.",
+    "players": [
+      {
+        "name": "Marcus T.",
+        "avatar": "/avatar1.png",
+        "level": "Advanced",
+        "confirmed": false
+      },
+      {
+        "name": "Sarah C.",
+        "avatar": "/avatar2.png",
+        "level": "Intermediate",
+        "confirmed": false
+      },
+      {
+        "name": "TestPlayer",
+        "avatar": "/avatar2.png",
+        "level": "Intermediate",
+        "confirmed": false
+      },
+      {
+        "name": "Khanh",
+        "avatar": "/avatar2.png",
+        "level": "Intermediate",
+        "confirmed": false
+      }
+    ]
+  },
+  {
+    "id": "m_molldmqh_rt2hro",
+    "title": "Beginner match at test",
+    "hostName": "Khanh",
+    "hostAvatar": "/avatar1.png",
+    "date": "2026-04-09",
+    "time": "02:31",
+    "location": "test",
+    "court": "Court 1",
+    "skillLevel": "Beginner",
+    "playersJoined": 2,
+    "playersNeeded": 2,
+    "fee": 12,
+    "status": "Full",
+    "description": "test",
+    "players": [
+      {
+        "name": "Khanh",
+        "avatar": "/avatar1.png",
+        "level": "Beginner",
+        "confirmed": false
+      },
+      {
+        "name": "sdawd13",
+        "avatar": "/avatar2.png",
+        "level": "Beginner",
+        "confirmed": true
+      }
+    ]
+  },
+  {
+    "id": "m_molkzzor_zmgry3",
+    "title": "Trận thử nghiệm",
+    "hostName": "TestPlayer",
+    "hostAvatar": "/avatar1.png",
+    "date": "2026-05-01",
+    "time": "19:00",
+    "location": "Sân Mỹ Đình",
+    "court": "Sân số 1",
+    "skillLevel": "Beginner",
+    "playersJoined": 2,
+    "playersNeeded": 2,
+    "fee": 60000,
+    "status": "Full",
+    "description": "Smoke test",
+    "players": [
+      {
+        "name": "TestPlayer",
+        "avatar": "/avatar1.png",
+        "level": "Beginner",
+        "confirmed": false
+      },
+      {
+        "name": "Khanh",
+        "avatar": "/avatar2.png",
+        "level": "Beginner",
+        "confirmed": true
+      }
+    ]
+  }
+]

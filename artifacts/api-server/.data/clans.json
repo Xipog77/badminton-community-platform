@@ -1,0 +1,87 @@
+[
+  {
+    "id": "c1",
+    "name": "Thể Công Smash Elite",
+    "members": 43,
+    "location": "Sân Thể Công, Đống Đa",
+    "level": "Elite Level",
+    "description": "CLB cạnh tranh hàng đầu Hà Nội. Tập luyện cường độ cao và đấu giải hàng tuần tại Thể Công.",
+    "image": "/clan1.png",
+    "tags": [
+      "ĐANG HOT",
+      "CHUYÊN NGHIỆP"
+    ],
+    "memberNames": [
+      "Minh",
+      "Lan",
+      "Đức",
+      "TestPlayer"
+    ]
+  },
+  {
+    "id": "c2",
+    "name": "Hoàn Kiếm Kings",
+    "members": 45,
+    "location": "Nhà thi đấu Hoàn Kiếm",
+    "level": "Social",
+    "description": "Đánh thân thiện và giao lưu cuối tuần. Chào đón mọi trình độ.",
+    "image": "/clan2.png",
+    "tags": [
+      "GIAO LƯU",
+      "THÂN THIỆN"
+    ],
+    "memberNames": [
+      "Alex",
+      "Hương",
+      "sdawd13",
+      "ad12",
+      "test"
+    ]
+  },
+  {
+    "id": "c3",
+    "name": "Cầu Giấy Rockets",
+    "members": 128,
+    "location": "Trung tâm TD-TT Cầu Giấy",
+    "level": "Intermediate",
+    "description": "Cộng đồng cầu lông đa dạng tại Cầu Giấy, tập trung nâng cao kỹ thuật và chiến thuật.",
+    "image": "/clan2.png",
+    "tags": [
+      "NHÓM LỚN",
+      "CHƠI HÀNG NGÀY"
+    ],
+    "memberNames": [
+      "Hà",
+      "Tuấn",
+      "Mai"
+    ]
+  },
+  {
+    "id": "c_mon3vloi_9r60mq",
+    "name": "1231",
+    "members": 2,
+    "location": "Sân Mỹ Đình, Nam Từ Liêm",
+    "level": "Advanced",
+    "description": "1231",
+    "image": "/clan2.png",
+    "tags": [
+      "Thân thiện"
+    ],
+    "memberNames": [
+      "ad12"
+    ]
+  },
+  {
+    "id": "c_monydjgq_86r1au",
+    "name": "adsad",
+    "members": 1,
+    "location": "ádasd",
+    "level": "Beginner",
+    "description": "xÁD",
+    "image": "/clan2.png",
+    "tags": [
+      "Giao lưu"
+    ],
+    "memberNames": []
+  }
+]

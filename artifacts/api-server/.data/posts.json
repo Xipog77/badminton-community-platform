@@ -1,0 +1,142 @@
+[
+  {
+    "id": "m3",
+    "title": "Tập đánh đơn nâng cao",
+    "hostName": "Minh T.",
+    "hostAvatar": "/avatar1.png",
+    "date": "2026-05-24",
+    "time": "18:00",
+    "location": "Sân Thể Công",
+    "court": "Sân số 4",
+    "skillLevel": "Intermediate",
+    "playersJoined": 4,
+    "playersNeeded": 4,
+    "fee": 80000,
+    "status": "Full",
+    "description": "Tìm 2 tay vợt cạnh tranh để tham gia buổi tập đánh đơn cường độ cao tại Thể Công.",
+    "players": [
+      {
+        "name": "Minh T.",
+        "avatar": "/avatar1.png",
+        "level": "Advanced"
+      },
+      {
+        "name": "Lan C.",
+        "avatar": "/avatar2.png",
+        "level": "Intermediate"
+      },
+      {
+        "name": "TestPlayer",
+        "avatar": "/avatar2.png",
+        "level": "Intermediate"
+      },
+      {
+        "name": "Khanh",
+        "avatar": "/avatar2.png",
+        "level": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "m4",
+    "title": "Đánh đôi chủ nhật - mọi trình độ",
+    "hostName": "Đức K.",
+    "hostAvatar": "/avatar1.png",
+    "date": "2026-06-01",
+    "time": "10:00",
+    "location": "Nhà thi đấu Hoàn Kiếm",
+    "court": "Sân số 2",
+    "skillLevel": "Beginner",
+    "playersJoined": 1,
+    "playersNeeded": 4,
+    "fee": 50000,
+    "status": "Open",
+    "description": "Đánh đôi thân thiện - chào đón mọi trình độ. Cầu được cung cấp.",
+    "players": [
+      {
+        "name": "Đức K.",
+        "avatar": "/avatar1.png",
+        "level": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "m_molkzzor_zmgry3",
+    "title": "Trận thử nghiệm",
+    "hostName": "TestPlayer",
+    "hostAvatar": "/avatar1.png",
+    "date": "2026-05-01",
+    "time": "19:00",
+    "location": "Sân Mỹ Đình",
+    "court": "Sân số 1",
+    "skillLevel": "Beginner",
+    "playersJoined": 2,
+    "playersNeeded": 2,
+    "fee": 60000,
+    "status": "Full",
+    "description": "Smoke test",
+    "players": [
+      {
+        "name": "TestPlayer",
+        "avatar": "/avatar1.png",
+        "level": "Beginner"
+      },
+      {
+        "name": "Khanh",
+        "avatar": "/avatar2.png",
+        "level": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "m_molldmqh_rt2hro",
+    "title": "Trận người mới tại Tây Hồ",
+    "hostName": "Khanh",
+    "hostAvatar": "/avatar1.png",
+    "date": "2026-06-09",
+    "time": "08:00",
+    "location": "Sân cầu lông Tây Hồ",
+    "court": "Sân số 1",
+    "skillLevel": "Beginner",
+    "playersJoined": 2,
+    "playersNeeded": 2,
+    "fee": 70000,
+    "status": "Full",
+    "description": "Buổi tập nhẹ nhàng cho người mới. Cơ hội học hỏi và kết bạn.",
+    "players": [
+      {
+        "name": "Khanh",
+        "avatar": "/avatar1.png",
+        "level": "Beginner"
+      },
+      {
+        "name": "sdawd13",
+        "avatar": "/avatar2.png",
+        "level": "Beginner"
+      }
+    ]
+  },
+  {
+    "id": "m_monysqg3_lmbfly",
+    "title": "Trận Intermediate tại Sân cầu lông Tây Hồ",
+    "hostName": "test",
+    "hostAvatar": "/avatar1.png",
+    "date": "21566-12-31",
+    "time": "04:54",
+    "location": "Sân cầu lông Tây Hồ",
+    "court": "Sân số 1",
+    "skillLevel": "Intermediate",
+    "playersJoined": 1,
+    "playersNeeded": 2,
+    "fee": 70000,
+    "status": "Open",
+    "description": "Trận đấu giao lưu thân thiện.",
+    "players": [
+      {
+        "name": "test",
+        "avatar": "/avatar1.png",
+        "level": "Intermediate"
+      }
+    ]
+  }
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "i1",
+    "name": "Yonex Astrox 88D Pro",
+    "price": 4200000,
+    "originalPrice": 5500000,
+    "condition": "Like New",
+    "location": "Hà Nội, Đống Đa",
+    "sellerName": "Đức K.",
+    "sellerAvatar": "/avatar1.png",
+    "image": "/racket1.png",
+    "category": "Rackets",
+    "isNewArrival": true
+  },
+  {
+    "id": "i2",
+    "name": "Victor SH-P9200",
+    "price": 2800000,
+    "condition": "New",
+    "location": "Hà Nội, Hoàn Kiếm",
+    "sellerName": "Lan L.",
+    "sellerAvatar": "/avatar2.png",
+    "image": "/shoes1.png",
+    "category": "Shoes"
+  },
+  {
+    "id": "i3",
+    "name": "Yonex AS-30 Hộp 12 quả",
+    "price": 650000,
+    "condition": "New",
+    "location": "Online",
+    "sellerName": "Smash Pro Shop HN",
+    "sellerAvatar": "/avatar1.png",
+    "image": "/shuttlecocks1.png",
+    "category": "Shuttlecocks",
+    "isOnSale": true
+  },
+  {
+    "id": "i_molln45r_yc4v3d",
+    "name": "Test Racket",
+    "price": 1900000,
+    "condition": "Like New",
+    "location": "Hà Nội, Cầu Giấy",
+    "sellerName": "TestPlayer",
+    "sellerAvatar": "/avatar1.png",
+    "image": "/racket1.png",
+    "category": "Rackets"
+  },
+  {
+    "id": "i_mollw846_8vntn8",
+    "name": "test",
+    "price": 20000,
+    "condition": "Brand New",
+    "location": "ad",
+    "sellerName": "sdawd13",
+    "sellerAvatar": "/avatar1.png",
+    "image": "/racket1.png",
+    "category": "Rackets"
+  }
+]

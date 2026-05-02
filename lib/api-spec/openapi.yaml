@@ -1,0 +1,665 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: RallyHub API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: auth
+    description: Simulated auth
+  - name: posts
+    description: Match posts
+  - name: matches
+    description: Confirmed matches
+  - name: products
+    description: Marketplace products
+  - name: clans
+    description: Clans / groups
+
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+
+  /auth/login:
+    post:
+      operationId: login
+      tags: [auth]
+      summary: Simulated login (creates user if missing)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginInput"
+      responses:
+        "200":
+          description: Logged in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+
+  /auth/profile:
+    patch:
+      operationId: updateProfile
+      tags: [auth]
+      summary: Update current user profile (avatar and skill level)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateProfileInput"
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Bad request
+        "404":
+          description: User not found
+
+  /posts:
+    get:
+      operationId: listPosts
+      tags: [posts]
+      summary: List all match posts
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Match"
+    post:
+      operationId: createPost
+      tags: [posts]
+      summary: Create a new match post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreatePostInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Match"
+
+  /posts/{id}:
+    get:
+      operationId: getPost
+      tags: [posts]
+      summary: Get a single match post
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Match"
+
+  /posts/{id}/join:
+    post:
+      operationId: joinPost
+      tags: [posts]
+      summary: Request to join a match (auto-accepted in demo)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/JoinInput"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Match"
+
+  /posts/{id}/accept:
+    post:
+      operationId: acceptJoinRequest
+      tags: [posts]
+      summary: Accept a pending join request
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AcceptInput"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Match"
+
+  /matches:
+    get:
+      operationId: listMatches
+      tags: [matches]
+      summary: List confirmed matches
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Match"
+
+  /matches/{id}:
+    get:
+      operationId: getMatch
+      tags: [matches]
+      summary: Get a confirmed match
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Match"
+
+  /matches/{id}/confirm:
+    post:
+      operationId: confirmMatch
+      tags: [matches]
+      summary: Confirm match result for a player
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ConfirmInput"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Match"
+
+  /products:
+    get:
+      operationId: listProducts
+      tags: [products]
+      summary: List marketplace products
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+    post:
+      operationId: createProduct
+      tags: [products]
+      summary: Create a new product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateProductInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+
+  /products/{id}:
+    get:
+      operationId: getProduct
+      tags: [products]
+      summary: Get a product
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+
+  /clans:
+    get:
+      operationId: listClans
+      tags: [clans]
+      summary: List clans
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Clan"
+    post:
+      operationId: createClan
+      tags: [clans]
+      summary: Create a clan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateClanInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Clan"
+
+  /clans/{id}:
+    get:
+      operationId: getClan
+      tags: [clans]
+      summary: Get a clan
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Clan"
+
+  /clans/{id}/join:
+    post:
+      operationId: joinClan
+      tags: [clans]
+      summary: Join a clan
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/JoinInput"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Clan"
+
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required: [status]
+
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        username:
+          type: string
+        avatar:
+          type: string
+        skillLevel:
+          type: string
+      required: [id, username, avatar, skillLevel]
+
+    LoginInput:
+      type: object
+      properties:
+        username:
+          type: string
+          minLength: 1
+      required: [username]
+
+    UpdateProfileInput:
+      type: object
+      properties:
+        username:
+          type: string
+          minLength: 1
+        avatar:
+          type: string
+        skillLevel:
+          type: string
+      required: [username]
+
+    Player:
+      type: object
+      properties:
+        name:
+          type: string
+        avatar:
+          type: string
+        level:
+          type: string
+        confirmed:
+          type: boolean
+      required: [name, avatar, level]
+
+    Match:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        hostName:
+          type: string
+        hostAvatar:
+          type: string
+        date:
+          type: string
+        time:
+          type: string
+        location:
+          type: string
+        court:
+          type: string
+        skillLevel:
+          type: string
+        playersJoined:
+          type: integer
+        playersNeeded:
+          type: integer
+        fee:
+          type: number
+        status:
+          type: string
+        description:
+          type: string
+        players:
+          type: array
+          items:
+            $ref: "#/components/schemas/Player"
+      required:
+        - id
+        - title
+        - hostName
+        - hostAvatar
+        - date
+        - time
+        - location
+        - court
+        - skillLevel
+        - playersJoined
+        - playersNeeded
+        - fee
+        - status
+        - description
+        - players
+
+    CreatePostInput:
+      type: object
+      properties:
+        title:
+          type: string
+          minLength: 1
+        hostName:
+          type: string
+          minLength: 1
+        date:
+          type: string
+        time:
+          type: string
+        location:
+          type: string
+        court:
+          type: string
+        skillLevel:
+          type: string
+        playersNeeded:
+          type: integer
+          minimum: 2
+        fee:
+          type: number
+        description:
+          type: string
+      required:
+        - title
+        - hostName
+        - date
+        - time
+        - location
+        - court
+        - skillLevel
+        - playersNeeded
+        - fee
+        - description
+
+    JoinInput:
+      type: object
+      properties:
+        username:
+          type: string
+          minLength: 1
+      required: [username]
+
+    AcceptInput:
+      type: object
+      properties:
+        username:
+          type: string
+          minLength: 1
+      required: [username]
+
+    ConfirmInput:
+      type: object
+      properties:
+        username:
+          type: string
+          minLength: 1
+      required: [username]
+
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        price:
+          type: number
+        originalPrice:
+          type: number
+        condition:
+          type: string
+        location:
+          type: string
+        sellerName:
+          type: string
+        sellerAvatar:
+          type: string
+        image:
+          type: string
+        category:
+          type: string
+        isNewArrival:
+          type: boolean
+        isOnSale:
+          type: boolean
+      required:
+        - id
+        - name
+        - price
+        - condition
+        - location
+        - sellerName
+        - sellerAvatar
+        - image
+        - category
+
+    CreateProductInput:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        price:
+          type: number
+        condition:
+          type: string
+        location:
+          type: string
+        sellerName:
+          type: string
+          minLength: 1
+        sellerAvatar:
+          type: string
+        image:
+          type: string
+        category:
+          type: string
+      required:
+        - name
+        - price
+        - condition
+        - location
+        - sellerName
+        - sellerAvatar
+        - image
+        - category
+
+    Clan:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        members:
+          type: integer
+        location:
+          type: string
+        level:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        memberNames:
+          type: array
+          items:
+            type: string
+      required:
+        - id
+        - name
+        - members
+        - location
+        - level
+        - description
+        - image
+        - tags
+        - memberNames
+
+    CreateClanInput:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        location:
+          type: string
+        level:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+      required:
+        - name
+        - location
+        - level
+        - description
+        - image
+        - tags

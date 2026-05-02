@@ -1,35 +1,16 @@
 {
-  "name": "badminton-community-platform",
-  "version": "0.1.0",
-  "private": true,
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev",
-    "prisma:studio": "prisma studio"
+    "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
+    "build": "pnpm run typecheck && pnpm -r --if-present run build",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
   },
-  "dependencies": {
-    "@auth/prisma-adapter": "^2.7.4",
-    "@prisma/client": "^6.7.0",
-    "next": "^15.3.1",
-    "next-auth": "^5.0.0-beta.25",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "zod": "^3.24.4"
-  },
+  "private": true,
   "devDependencies": {
-    "@types/node": "^22.15.3",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "autoprefixer": "^10.4.21",
-    "eslint": "^9.25.1",
-    "eslint-config-next": "^15.3.1",
-    "postcss": "^8.5.3",
-    "prisma": "^6.7.0",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5.8.3"
+    "typescript": "~5.9.2",
+    "prettier": "^3.8.1"
   }
 }
